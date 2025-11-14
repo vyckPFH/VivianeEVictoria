@@ -50,7 +50,7 @@ public class Main {
           System.out.println("a especie que reduz é: " + expecie2);
           break;
         } else {
-          System.out.println("TOMANOCU");
+          System.out.println("au");
         }
       }
 
