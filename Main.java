@@ -37,6 +37,12 @@ public class Main {
     String expecie2 = null;
 
     while (true) {
+      System.out.println("•·• Opções de Metal •·•");
+      System.out.println("Zn(s)");
+      System.out.println("Zn2+(aq)");
+      System.out.println("Cu(s)");
+      System.out.println("Cu2+(aq)");
+      System.out.println();
       expecie1 = LER.next().trim();// tirar " "
       expecie2 = LER.next().trim();// dei uma pesquisad
 
