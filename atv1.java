@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class atv1 {
   final static Scanner LER = new Scanner(System.in);
 
   public static void main(String[] args) {
