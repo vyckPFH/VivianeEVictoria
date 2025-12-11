@@ -17,7 +17,7 @@ public class atv2 {
             -0.44f, 0.44f, // Fe(s), Fe2+
 
             -2.37f, 2.37f, // Mg(s), Mg2+
-            
+
             -0.80f, 0.80f, // Ag(s), Ag+
 
             -0.28f, 0.28f, // Co(s), Co2+
@@ -72,19 +72,31 @@ public class atv2 {
             if (potenxialDeOxireducao[especie1] > potenxialDeOxireducao[especie2]) {
                 oxida = metais[especie2];
                 reduz = metais[especie1];
-                eOxida = potenxialDeOxireducao[especie2];
-                eReduz = potenxialDeOxireducao[especie1];
-                System.out.println("a especie que oxida é: " + oxida + " " + eOxida + "V");
-                System.out.println("a especie que reduz é: " + reduz + " " + eReduz + "V");
-            } else {
-                eOxida = potenxialDeOxireducao[especie1];
-                eReduz = potenxialDeOxireducao[especie2];
 
+                if (verfCondiciones(oxida, reduz)) {
+
+                    eOxida = potenxialDeOxireducao[especie2];
+                    eReduz = potenxialDeOxireducao[especie1];
+                    System.out.println("a especie que oxida é: " + oxida + " " + eOxida + "V");
+                    System.out.println("a especie que reduz é: " + reduz + " " + eReduz + "V");
+                    System.out.printf("potencial: %.2f", calcularPotencial(eOxida, eReduz));
+                    System.out.println();
+
+                }
+
+            } else {
                 oxida = metais[especie1];
                 reduz = metais[especie2];
-                
-                System.out.println("a especie que oxida é: " + oxida + " " + eOxida + "V");
-                System.out.println("a especie que reduz é: " + reduz + " " + eReduz + "V");
+
+                if (verfCondiciones(oxida, reduz)) {
+                    eOxida = potenxialDeOxireducao[especie1];
+                    eReduz = potenxialDeOxireducao[especie2];
+
+                    System.out.println("a especie que oxida é: " + oxida + " " + eOxida + "V");
+                    System.out.println("a especie que reduz é: " + reduz + " " + eReduz + "V");
+                    System.out.printf("potencial: %.2f" , calcularPotencial(eOxida, eReduz));
+                    System.out.println();
+                }
 
             }
 
@@ -93,15 +105,12 @@ public class atv2 {
 
         }
         // while (true) {
-
         // expecie1 = LER.next().trim();// tirar " "
         // expecie2 = LER.next().trim();// dei uma pesquisad
         // float eOxida;
         // float eReduz;
-
         // if (verfCondiciones(expecie1, expecie2)) {
         // if (expecie1.contains("+")) {
-
         // System.out.println("a especie que oxida é: " + expecie2);
         // System.out.println("a especie que reduz é: " + expecie1);
         // eOxida = encontrarPotencial(expecie2);
@@ -109,7 +118,6 @@ public class atv2 {
         // System.out.println(eOxida);
         // System.out.println(eReduz);
         // System.out.println("Potencial: " + calcularPotencial(eOxida, eReduz));
-
         // break;
         // } else if (expecie1.contains("(s)")) {
         // System.out.println("a especie que oxida é: " + expecie1);
@@ -122,7 +130,6 @@ public class atv2 {
         // System.out.println("au");
         // }
         // }
-
         // }
 
     }
